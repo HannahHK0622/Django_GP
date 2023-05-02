@@ -35,7 +35,7 @@ def index(request):
     else:
         return redirect(app_login)
 
-# 
+home = index
 
 # @decorators.login_required("/login/")
 def how(request):
@@ -92,7 +92,7 @@ def app_logout(request):
         user = request.user
         if user.is_authenticated:
             logout(user)
-            return redirect("index")
+            return redirect(home)
         else:
             try:
                 referer = request.META['HTTP_REFERER']
@@ -103,7 +103,7 @@ def app_logout(request):
             else:
                 return HttpResponseRedirect('about/')
     else:
-        return redirect("index")
+        return redirect(home)
 
 # @decorators.login_required("/login/")
 def changeUser(request,userid):
