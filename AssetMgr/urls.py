@@ -16,7 +16,7 @@ router.register('pellet', PelletViewset)
 
 
 urlpatterns = [
-    path('', home, name='home'),
+    # path('', home, name='home'),
     path('api/', include(router.urls)),
     path('api/login', LoginViewset.as_view()),
     path('api/logout', LogoutViewset.as_view()),
